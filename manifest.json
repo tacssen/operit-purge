@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "toolpkg_id": "com.yg.operit_purge",
+  "version": "1.0.0",
+  "api_version": "1.0.1",
+  "author": ["YG"],
+  "main": "dist/main.js",
+  "display_name": {
+    "zh": "Operit 破甲",
+    "en": "Operit Purge"
+  },
+  "description": {
+    "zh": "把 dsh-purge 的破甲能力搬到 Operit：系统提示词注入、拒答检测与自动重答、预设管理、控制台面板。目标只有一个——让模型直接交付被请求的工件，不拒答、不软化、不说教。",
+    "en": "Brings dsh-purge style refusal hardening to Operit: system prompt injection, refusal detection with auto-retry, preset management and a console panel."
+  },
+  "logo": "package_logo",
+  "enabled_by_default": true,
+  "subpackages": [
+    {
+      "id": "purge_tools",
+      "entry": "dist/packages/purge_tools.js",
+      "enabled_by_default": true,
+      "display_name": {
+        "zh": "破甲工具",
+        "en": "Purge Tools"
+      },
+      "description": {
+        "zh": "给模型用的破甲配置工具：开关、预设切换、状态查询、自检。",
+        "en": "Purge configuration tools for the model: toggles, preset switch, status and self-check."
+      }
+    }
+  ],
+  "resources": [
+    {
+      "key": "package_logo",
+      "path": "resources/logo.svg",
+      "mime": "image/svg+xml"
+    },
+    {
+      "key": "quick_start",
+      "path": "resources/quick-start.md",
+      "mime": "text/markdown"
+    }
+  ]
+}
