@@ -148,7 +148,8 @@ function buildZip(files) {
 }
 
 function main() {
-  var outDir = process.argv[2] || path.join(ROOT, "build");
+  // 默认写到 release/，这个目录纳入版本控制：手机上直接从仓库下载 .toolpkg 就能导入。
+  var outDir = process.argv[2] || path.join(ROOT, "release");
   fs.mkdirSync(outDir, { recursive: true });
 
   var manifestPath = path.join(ROOT, "manifest.json");

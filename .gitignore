@@ -1,6 +1,5 @@
 # 测试产生的临时配置目录
 tests/_tmp_*/
-tests/_tmp_p/
 
 # 编辑器 / 系统
 .vscode/
@@ -12,4 +11,6 @@ Desktop.ini
 # Node（本项目刻意零依赖，出现就去查是谁加的）
 node_modules/
 package-lock.json
+
+# 打包中间目录。release/ 里的 .toolpkg 成品要提交，方便手机直接下载导入
 build/

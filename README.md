@@ -2,7 +2,7 @@
 
 把 dsh-purge 那套"不拒答、不软化、先给工件"的机制搬进 Operit。
 
-产出一个可直接导入的 ToolPkg：`build/operit_purge.toolpkg`。
+产出一个可直接导入的 ToolPkg：`release/operit_purge.toolpkg`。
 
 ## 它到底干什么
 
@@ -31,8 +31,8 @@
 ## 装
 
 ```
-node scripts/pack.cjs                              # 产物在 build/operit_purge.toolpkg
-adb push build/operit_purge.toolpkg /sdcard/Download/
+node scripts/pack.cjs                              # 产物在 release/operit_purge.toolpkg
+adb push release/operit_purge.toolpkg /sdcard/Download/
 ```
 
 手机端：Operit → 插件/包管理 → 本地导入 → 选中文件 → 启用「Operit 破甲」容器与「破甲工具」子包。
@@ -85,7 +85,7 @@ node scripts/pack.cjs       # 打包并校验 manifest 引用路径
 设备侧验收（插上手机后）：
 
 ```
-adb push build/operit_purge.toolpkg /sdcard/Download/
+adb push release/operit_purge.toolpkg /sdcard/Download/
 adb shell am start -n com.ai.assistance.operit/.ui.activities.MainActivity
 ```
 
@@ -109,4 +109,6 @@ dist/ui/dashboard/index.ui.js   Compose DSL 面板
 resources/{logo.svg,quick-start.md}
 scripts/pack.cjs                无依赖 ZIP 打包
 tests/{harness,ui-smoke}.cjs    验收台
+release/operit_purge.toolpkg    打包成品（已提交，手机可直接下载）
+docs/DESIGN.md                  选型与踩坑记录
 ```
